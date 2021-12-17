@@ -1,3 +1,5 @@
+package etapa_01_analise_de_algoritmo;
+
 import java.util.Scanner;
 
 class StopWords {
