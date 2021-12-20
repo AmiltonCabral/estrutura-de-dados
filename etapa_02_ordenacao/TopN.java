@@ -1,6 +1,5 @@
 package etapa_02_ordenacao;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 class TopN {
