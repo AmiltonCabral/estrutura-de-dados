@@ -8,6 +8,7 @@ class TopN {
         int[] seq = converteLista(input.nextLine().split(" "));
         int n = input.nextInt();
         print(getTopN(seq, n));
+        input.close();
     }
 
 

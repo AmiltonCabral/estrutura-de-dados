@@ -13,6 +13,7 @@ class VetorCircular {
             output += seqNum[i % seqNum.length] + " ";
 
         System.out.println(output.trim());
+        input.close();
     }
 }
 

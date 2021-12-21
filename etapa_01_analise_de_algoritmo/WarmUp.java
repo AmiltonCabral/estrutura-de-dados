@@ -15,6 +15,6 @@ class WarmUp {
             output += Integer.parseInt(seqNum[i]) * n + " ";
 
         System.out.println(output.trim());
-
+        input.close();
     }
 }

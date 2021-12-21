@@ -21,5 +21,6 @@ class StopWords {
         }
 
         System.out.println(output.trim());
+        input.close();
     }
 }

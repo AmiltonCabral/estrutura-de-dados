@@ -19,6 +19,6 @@ class VerificaDuplicado {
         }
         
         System.out.println(result);
-        
+        input.close();
     }
 }

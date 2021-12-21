@@ -7,6 +7,7 @@ class MarianaEOsLivros {
         Scanner input = new Scanner(System.in);
         String[] estante = input.nextLine().split(",");
         sort(estante);
+        input.close();
     }
 
 

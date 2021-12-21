@@ -19,5 +19,6 @@ class TrocaVizinhos {
         }
 
         System.out.println(Arrays.toString(newListNum));
+        input.close();
     }
 }

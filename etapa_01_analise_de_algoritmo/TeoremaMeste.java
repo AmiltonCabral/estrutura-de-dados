@@ -15,5 +15,6 @@ class TeoremaMeste {
         } else if (log == ord) {
             System.out.println("T(n) = theta(n**" + (int) log + " * log n)");
         }
+        input.close();
     }
 }

@@ -9,6 +9,7 @@ class BuscaBinaria {
         int N = input.nextInt();
         int[] seq = converteLista(seqStr);
         buscaRecursiva(seq, N, 0, seq.length -1);
+        input.close();
     }
     
     private static int buscaRecursiva(int[] seq, int N, int ini, int fim) {

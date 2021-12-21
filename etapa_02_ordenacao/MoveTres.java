@@ -8,6 +8,7 @@ class MoveTres {
         Scanner input = new Scanner(System.in);
         int[] lista = converteLista(input.nextLine().split(" "));
         sort(lista);
+        input.close();
     }
 
 

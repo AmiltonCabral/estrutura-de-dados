@@ -21,5 +21,6 @@ class FuraFila {
             
             System.out.println(Arrays.toString(fila));
         }
+        input.close();
     }
 }
