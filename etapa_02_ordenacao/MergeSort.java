@@ -61,6 +61,3 @@ class MergeSort {
         return novaLista;
     }
 }
-
-
-// 7 12 10 8 19 5 3 90
