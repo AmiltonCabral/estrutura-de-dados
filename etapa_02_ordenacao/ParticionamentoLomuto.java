@@ -7,7 +7,7 @@ class ParticionamentoLomuto {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] v = converteLista(input.nextLine().split(" "));
-        partition(v, 0, v.length);
+        partition(v, 0, v.length-1);
         System.out.println(Arrays.toString(v));
         input.close();
     }
@@ -16,7 +16,7 @@ class ParticionamentoLomuto {
     private static int partition(int v[], int left, int right) {
         int pivot = v[left];
         int i = left;
-        for (int j = i+1; j < right; j++) {
+        for (int j = i+1; j <= right; j++) {
             if (v[j] < pivot) {
                 i++;
                 swap(v, i, j);
