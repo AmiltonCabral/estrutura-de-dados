@@ -43,22 +43,3 @@ class MelhorPivot {
         return novaLista;
     }
 }
-
-/*
-    private static int pickPivotIndex(int v[]) {
-        int[] vAux = new int[v.length];
-        for (int i=0; i<v.length; i++) {
-            vAux[i] = v[i];
-        }
-        Arrays.sort(vAux);
-
-        int middle = v.length / 2;
-        for (int i=0; i<v.length; i++) {
-            if (vAux[middle] == v[i]) {
-                System.out.println(i);
-                return i;
-            }
-        }
-        return 0;
-    }
-*/
