@@ -20,17 +20,14 @@ class BuscaBinaria2 {
     private static int buscaBinaria(int[] seq, int N, int left, int right) {
         int meio = (right + left) / 2;
         System.out.println(meio);
-        if (seq[meio] == N) {
+        if (seq[meio] == N)
             return seq[meio];
-        }
 
-        if (left < right) {
-            if (seq[meio] > N) {
+        if (left < right) 
+            if (seq[meio] > N)
                 return buscaBinaria(seq, N, left, meio - 1);
-            } else {
+            else
                 return buscaBinaria(seq, N, meio + 1, right);
-            }
-        }
 
         System.out.println(-1);
         return -1;
@@ -39,9 +36,8 @@ class BuscaBinaria2 {
 
     private static int[] converteLista(String[] lista) {
         int[] novaLista = new int[lista.length];
-        for (int i=0; i<lista.length; i++) {
+        for (int i=0; i<lista.length; i++)
             novaLista[i] = Integer.parseInt(lista[i]);
-        }
         return novaLista;
     }
 }
