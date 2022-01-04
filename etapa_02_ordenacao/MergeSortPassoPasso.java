@@ -3,7 +3,7 @@ package etapa_02_ordenacao;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class MergeSort {
+class MergeSortPassoPasso {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] v = converteLista(input.nextLine().split(" "));
