@@ -14,11 +14,10 @@ class DownN {
 
     private static int[] getTopN(int[] seq, int n) {
         int[] top = new int[n];
-
         for (int i=0; i<n; i++) {
             top[i] = Integer.MAX_VALUE;
             for (int j=0; j<seq.length; j++) {
-                if (seq[j] < top[i] && !tem(top, seq[j])) {
+                if (seq[j] < top[i] && !tem(top, seq, seq[j])) {
                     top[i] = seq[j];
                 }
             }
@@ -27,10 +26,18 @@ class DownN {
     }
 
 
-    private static boolean tem(int[] seq, int n) {
+    private static boolean tem(int[] seq, int[] oldSeq, int n) {
+        int countOS = 0;
+        int countNS = 0;
+        for (int i=0; i<oldSeq.length; i++) {
+            if (oldSeq[i] == n)
+                countOS++;   
+        }
         for (int i=0; i<seq.length; i++) {
             if (seq[i] == n) {
-                return true;
+                countNS++;
+                if (countNS >= countOS)
+                    return true;
             }
         }
         return false;
