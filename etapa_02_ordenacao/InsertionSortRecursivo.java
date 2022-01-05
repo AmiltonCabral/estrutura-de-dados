@@ -12,7 +12,28 @@ class InsertionSortRecursivo {
     }
 
 
-    private static void insertionSort(int[] v) {
+    public static void insertionSort(int[] v) {
+        insertionSort(v, 1);
+    }
+
+
+    private static void insertionSort(int[] v, int i) {
+        if (i <= v.length-1) {
+            int j = i;
+            while (j > 0 && v[j] < v[j-1]) {
+                swap(v, j, j-1);
+                j--;
+            }
+            System.out.println(Arrays.toString(v));
+            insertionSort(v, i+1);
+        }
+    }
+
+
+    private static void swap(int[] lista, int ind1, int ind2) {
+        int aux = lista[ind1];
+        lista[ind1] = lista[ind2];
+        lista[ind2] = aux;
     }
 
 
