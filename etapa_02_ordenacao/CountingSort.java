@@ -12,8 +12,25 @@ class CountingSort {
     }
 
 
-    private static void sort(int[] v, int k) {
+    /**
+     * 
+     * @param a the array to be ordered
+     * @param k the maximum value of the array
+     */
+    private static void sort(int[] a, int k) {
+        
+        // Create auxiliary vector with zero values.
+        int[] vAux = new int[k+1];
+        for(int i=0; i<=k; i++) {
+            vAux[i] = 0;
+        }
 
+        // *** Count the number of times that a number apear in the array
+        for(int i=0; i<k; i++) {
+            vAux[a[i]] = vAux[a[i]] + 1;
+        }
+
+        
     }
 
 
