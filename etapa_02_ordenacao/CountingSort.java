@@ -18,26 +18,39 @@ class CountingSort {
      * @param k the maximum value of the array
      */
     private static void sort(int[] a, int k) {
-        
         // Create auxiliary vector with zero values.
-        int[] vAux = new int[k+1];
+        int[] countArr = new int[k+1];
         for(int i=0; i<=k; i++) {
-            vAux[i] = 0;
+            countArr[i] = 0;
         }
 
-        // *** Count the number of times that a number apear in the array
-        for(int i=0; i<k; i++) {
-            vAux[a[i]] = vAux[a[i]] + 1;
+        // Count the number of times that a number apear in the array
+        for(int i=0; i<a.length; i++) {
+            countArr[a[i]]++;
+            print(countArr);
         }
 
-        
-    }
+        // countArr will have the number of elements lower or equals to i.
+        for(int i=1; i<=k; i++) {
+            countArr[i] = countArr[i] + countArr[i-1];
+        }
+        System.out.print("Cumulativa do vetor de contagem - ");
+        print(countArr);
 
+        // Create a auxiliar array that will be the original array ordered
+        // Important tranverse the array from right to left to keep stable
+        int[] newArr = new int[a.length];
+        for(int i=a.length - 1; i>=0; i--) {
+            newArr[countArr[a[i]] - 1] = a[i];
+            countArr[a[i]]--;
+        }
+        print(countArr);
 
-    private static void swap(int[] lista, int ind1, int ind2) {
-        int aux = lista[ind1];
-        lista[ind1] = lista[ind2];
-        lista[ind2] = aux;
+        // Copy the auxiliar array (ordered) to the original array
+        for(int i=0; i<a.length; i++) {
+            a[i] = newArr[i];
+        }
+        print(a);
     }
 
 
