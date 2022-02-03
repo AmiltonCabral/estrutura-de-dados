@@ -1,5 +1,6 @@
 package etapa_02_ordenacao;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class CountingSortNegativos {
@@ -21,7 +22,7 @@ class CountingSortNegativos {
      */
     private static void sort(int[] a, int k, int m) {
         // Create auxiliary vector with zero values.
-        int countArrLength = (-1*m)+(k+1);
+        int countArrLength = k-m+1;
         int[] countArr = new int[countArrLength];
         for(int i=0; i<=k; i++) {
             countArr[i] = 0;
@@ -29,8 +30,8 @@ class CountingSortNegativos {
 
         // Count the number of times that a number apear in the array
         for(int i=0; i<a.length; i++) {
-            countArr[a[i]+(-1*m)]++;
-            print(countArr);
+            countArr[a[i]-m]++;
+            System.out.println(Arrays.toString(countArr));
         }
 
         // countArr will have the number of elements lower or equals to i.
@@ -38,22 +39,22 @@ class CountingSortNegativos {
             countArr[i] = countArr[i] + countArr[i-1];
         }
         System.out.print("Cumulativa do vetor de contagem - ");
-        print(countArr);
+        System.out.println(Arrays.toString(countArr));
 
         // Create a auxiliar array that will be the original array ordered
         // Important traverse the array from right to left to keep stable
         int[] newArr = new int[a.length];
         for(int i=a.length - 1; i>=0; i--) {
-            newArr[countArr[a[i] + (-1*m)] - 1] = a[i];
-            countArr[a[i] + (-1*m)]--;
+            newArr[countArr[a[i]-m] - 1] = a[i];
+            countArr[a[i]-m]--;
         }
-        print(countArr);
+        System.out.println(Arrays.toString(countArr));
 
         // Copy the auxiliar array (ordered) to the original array
         for(int i=0; i<a.length; i++) {
             a[i] = newArr[i];
         }
-        print(a);
+        System.out.println(Arrays.toString(a));
     }
 
 
@@ -63,16 +64,5 @@ class CountingSortNegativos {
             novaLista[i] = Integer.parseInt(lista[i]);
         }
         return novaLista;
-    }
-
-
-    private static void print(int[] lista) {
-        String output = "";
-        for (int i=0; i<lista.length; i++) {
-            output += lista[i];
-            if (i < lista.length - 1)
-                output += " ";
-        }
-        System.out.println(output);
     }
 }
