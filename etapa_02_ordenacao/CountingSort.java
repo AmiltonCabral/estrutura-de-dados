@@ -23,29 +23,29 @@ class CountingSort {
 
         // Count the number of times that a number apear in the array
         for(int i=0; i<a.length; i++) {
-            countArr[a[i] - 1]++;
+            countArr[a[i] -1]++;
             print(countArr);
         }
 
         // countArr will have the number of elements lower or equals to i.
         // k == countArr.length
         for(int i=1; i<k; i++) {
-            //countArr[i] = countArr[i] + countArr[i-1];
             countArr[i] += countArr[i-1];
         }
         System.out.print("Cumulativa do vetor de contagem - ");
         print(countArr);
 
         // Create a auxiliar array that will be the original array ordered
-        // Important tranverse the array from right to left to keep stable
         int[] newArr = new int[a.length];
-        for(int i=a.length - 1; i>=0; i--) {
-            newArr[countArr[a[i]-1]-1] = a[i];
-            countArr[a[i]-1]--;
+        // Important tranverse the array from right to left to keep stable
+        for(int i=a.length -1; i>=0; i--) {
+            newArr[countArr[a[i] -1] -1] = a[i];
+            countArr[a[i] -1]--;
         }
         print(countArr);
 
         // Copy the auxiliar array (ordered) to the original array
+        // You can also return newArr and delete the lines below
         for(int i=0; i<a.length; i++) {
             a[i] = newArr[i];
         }
