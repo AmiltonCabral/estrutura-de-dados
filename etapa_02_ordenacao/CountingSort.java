@@ -19,17 +19,19 @@ class CountingSort {
      */
     private static void sort(int[] a, int k) {
         // Create auxiliary vector with zero values.
-        int[] countArr = new int[k+1];
+        int[] countArr = new int[k];
 
         // Count the number of times that a number apear in the array
         for(int i=0; i<a.length; i++) {
-            countArr[a[i]]++;
+            countArr[a[i] - 1]++;
             print(countArr);
         }
 
         // countArr will have the number of elements lower or equals to i.
-        for(int i=1; i<=k; i++) {
-            countArr[i] = countArr[i] + countArr[i-1];
+        // k == countArr.length
+        for(int i=1; i<k; i++) {
+            //countArr[i] = countArr[i] + countArr[i-1];
+            countArr[i] += countArr[i-1];
         }
         System.out.print("Cumulativa do vetor de contagem - ");
         print(countArr);
@@ -38,8 +40,8 @@ class CountingSort {
         // Important tranverse the array from right to left to keep stable
         int[] newArr = new int[a.length];
         for(int i=a.length - 1; i>=0; i--) {
-            newArr[countArr[a[i]] - 1] = a[i];
-            countArr[a[i]]--;
+            newArr[countArr[a[i]-1]-1] = a[i];
+            countArr[a[i]-1]--;
         }
         print(countArr);
 
