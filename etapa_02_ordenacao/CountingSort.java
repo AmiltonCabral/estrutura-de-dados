@@ -20,9 +20,6 @@ class CountingSort {
     private static void sort(int[] a, int k) {
         // Create auxiliary vector with zero values.
         int[] countArr = new int[k+1];
-        for(int i=0; i<=k; i++) {
-            countArr[i] = 0;
-        }
 
         // Count the number of times that a number apear in the array
         for(int i=0; i<a.length; i++) {
