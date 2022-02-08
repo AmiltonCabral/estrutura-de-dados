@@ -22,35 +22,33 @@ class CountingSortNegativos {
      */
     private static void sort(int[] a, int k, int m) {
         // Create auxiliary vector with zero values.
-        int countArrLength = k-m+1;
-        int[] countArr = new int[countArrLength];
-        for(int i=0; i<=k; i++) {
-            countArr[i] = 0;
-        }
+        // countArrLength = k-m+1;
+        int[] countArr = new int[k-m+1];
 
         // Count the number of times that a number apear in the array
         for(int i=0; i<a.length; i++) {
-            countArr[a[i]-m]++;
+            countArr[a[i] -m]++;
             System.out.println(Arrays.toString(countArr));
         }
 
         // countArr will have the number of elements lower or equals to i.
-        for(int i=1; i<countArrLength; i++) {
-            countArr[i] = countArr[i] + countArr[i-1];
+        for(int i=1; i<(k-m+1); i++) {
+            countArr[i] += countArr[i-1];
         }
         System.out.print("Cumulativa do vetor de contagem - ");
         System.out.println(Arrays.toString(countArr));
 
         // Create a auxiliar array that will be the original array ordered
-        // Important traverse the array from right to left to keep stable
         int[] newArr = new int[a.length];
+        // Important traverse the array from right to left to keep stable
         for(int i=a.length - 1; i>=0; i--) {
-            newArr[countArr[a[i]-m] - 1] = a[i];
-            countArr[a[i]-m]--;
+            newArr[countArr[a[i] -m] - 1] = a[i];
+            countArr[a[i] -m]--;
         }
         System.out.println(Arrays.toString(countArr));
 
         // Copy the auxiliar array (ordered) to the original array
+        // You can also return newArr and delete the lines below
         for(int i=0; i<a.length; i++) {
             a[i] = newArr[i];
         }
