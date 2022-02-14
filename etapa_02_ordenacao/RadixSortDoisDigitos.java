@@ -3,7 +3,9 @@ package etapa_02_ordenacao;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
+/**
+ * Tentar fazer com array de contagem valor 99
+ */
 class RadixSortDoisDigitos {
 
     public static void main(String[] args) {
