@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Tentar fazer com array de contagem valor 99
+ * RadixSort with 2 decimal place.
+ * (The only change is in the output)
+ * It's still basically normal RadixSort
  */
 class RadixSortDoisDigitos {
 
