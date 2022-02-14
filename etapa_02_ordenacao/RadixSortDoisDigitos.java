@@ -19,7 +19,10 @@ class RadixSortDoisDigitos {
         //System.out.println(Arrays.toString(a));
         for(int i=1; i<=d; i++) {
             a = countingSort(a, i);
-            if (i % 2 == 0) {
+            /*Here are the only diference between RadixSort and RadixDoisDigitos
+            * In this version we want print de result every 2 decimal place
+            */
+            if(i % 2 == 0) {
                 System.out.println(Arrays.toString(a));
             }
         }
