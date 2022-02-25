@@ -11,14 +11,14 @@ public class LinkedList {
     private Node tail;
     private int size;
 
-
+    
     public LinkedList() {
         this.size = 0;
     }
 
 
     public boolean isEmpty() {
-        return this.size() == 0;
+        return this.size == 0;
     }
 
 
@@ -66,7 +66,7 @@ public class LinkedList {
 
 
     public void add(int index, Object object) {
-        if (index < 0 || index >= this.size())
+        if (index < 0 || index >= this.size)
             throw new IndexOutOfBoundsException("Invalid index");
 
         if (object == null)
@@ -75,7 +75,7 @@ public class LinkedList {
         if (index == 0) {
             this.addFirst(object);
 
-        } else if (index == this.size() - 1) {
+        } else if (index == this.size - 1) {
             this.addLast(object);
             
         } else {
@@ -94,7 +94,7 @@ public class LinkedList {
 
 
     public Object get(int index) {
-        if (index < 0 || index >= this.size())
+        if (index < 0 || index >= this.size)
             throw new IndexOutOfBoundsException("Invalid index");
 
         Node aux = this.head;
@@ -137,9 +137,6 @@ public class LinkedList {
 
 
     public boolean contains(Object object) {
-        if (object == null)
-            throw new IllegalArgumentException("Null object");
-
         return this.indexOf(object) != -1;
     }
 
@@ -150,7 +147,7 @@ public class LinkedList {
 
         Object value = this.head.value;
 
-        if (this.size() == 1) {
+        if (this.size == 1) {
             this.head = null;
             this.tail = null;
         } else {
@@ -169,7 +166,7 @@ public class LinkedList {
 
         Object value = this.tail.value;
 
-        if (this.size() == 1) {
+        if (this.size == 1) {
             this.head = null;
             this.tail = null;
         } else {
@@ -183,13 +180,13 @@ public class LinkedList {
 
 
     public Object remove(int index) {
-        if (index < 0 || index >= this.size())
+        if (index < 0 || index >= this.size)
             throw new IndexOutOfBoundsException("Invalid index");
 
         if (index == 0)
             return this.removeFirst();
 
-        if (index == this.size() - 1)
+        if (index == this.size - 1)
             return this.removeLast();
 
         Node aux = this.head;
@@ -208,31 +205,24 @@ public class LinkedList {
         if (object == null)
             throw new IllegalArgumentException("Null object");
 
-        if (this.isEmpty())
-            return false;
-
         Node aux = this.head;
-
-        if (this.head.value.equals(object)) {
-            this.removeFirst();
-            return true;
-        }
-
-        if (this.tail.value.equals(object)) {
-            this.removeLast();
-            return true;
-        }
-
-        while (aux != null) {
+        
+        for (int i=0; i<this.size; i++) {
             if (aux.value.equals(object)) {
-                aux.prev.next = aux.next;
-                aux.next.prev = aux.prev;
-                this.size --;
+                if (i == 0)
+                    this.removeFirst();
+                else if (i == this.size - 1)
+                    this.removeLast();
+                else {
+                    aux.prev.next = aux.next;
+                    aux.next.prev = aux.prev;
+                    this.size --;
+                }
                 return true;
             }
             aux = aux.next;
         }
-        
+
         return false;
     }
 
