@@ -43,7 +43,7 @@ public class ArrayList {
     }
 
 
-    public void set(Object object, int index) {
+    public void set(int index, Object object) {
         if (index < 0 || index >= this.size)
             throw new IndexOutOfBoundsException();
 
@@ -89,7 +89,6 @@ public class ArrayList {
     public Object remove(int index) {
         if (index < 0 || index >= this.size)
             return null;
-            //throw new IndexOutOfBoundsException();
 
         Object object = this.get(index);
         this.shiftLeft(index);
@@ -138,6 +137,15 @@ public class ArrayList {
     }
 
 
+    public boolean isEmpty() {
+        return this.size() == 0;
+    }
+
+
+    public int size() {
+        return this.size;
+    }
+
 
     //tests
     public static void main(String[] args) {
@@ -147,7 +155,7 @@ public class ArrayList {
         l.add("ola", 0);
         assert l.get(0).equals("ola");
         assert l.get(1).equals("mun");
-        l.set("mundo", 1);
+        l.set(1, "mundo");
         assert l.get(1).equals("mundo");
         l.add("first", 0);
         assert l.get(0).equals("first");
@@ -156,7 +164,7 @@ public class ArrayList {
         l.add("verstappen");
         l.add("best");
         assert l.get(5).equals("best");
-        l.set("vigarista", 5);
+        l.set(5, "vigarista");
         assert l.get(5).equals("vigarista");
         assert l.indexOf("vigarista") == 5;
         l.add("plus07");
