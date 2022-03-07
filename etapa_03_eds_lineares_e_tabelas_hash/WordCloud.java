@@ -10,7 +10,7 @@ public class WordCloud {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        HashMap freq = new HashMap<>();
+        HashMap<String, Integer> freq = new HashMap<>();
         String[] frase = input.nextLine().split(" ");
         for(String palavra : frase) {
             if(freq.containsKey(palavra)) {
