@@ -1,0 +1,358 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "-ea"
+        },
+        {
+            "type": "java",
+            "name": "Launch BuscaBinaria",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.BuscaBinaria",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch BuscaBinaria2",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.BuscaBinaria2",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch DoisSomam",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.DoisSomam",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch EncontraPrimeiroNegativo",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.EncontraPrimeiroNegativo",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch FuraFila",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.FuraFila",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch StopWords",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.StopWords",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch TeoremaMeste",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.TeoremaMeste",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch TrocaVizinhos",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.TrocaVizinhos",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch VerificaDuplicado",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.VerificaDuplicado",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch VetorCircular",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.VetorCircular",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch WarmUp",
+            "request": "launch",
+            "mainClass": "etapa_01_analise_de_algoritmo.WarmUp",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch BubbleSort",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.BubbleSort",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch CountingSort",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.CountingSort",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch CountingSortNegativos",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.CountingSortNegativos",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch DownN",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.DownN",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch EstatisticaDeOrdem",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.EstatisticaDeOrdem",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch InsertionSortRecursivo",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.InsertionSortRecursivo",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch MarianaEOsLivros",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.MarianaEOsLivros",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch MelhorPivot",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.MelhorPivot",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch MergeSort",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.MergeSort",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch MergeSortPassoPasso",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.MergeSortPassoPasso",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch MoveTres",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.MoveTres",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch ParticionamentoLomuto",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.ParticionamentoLomuto",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch ParticionamentoLomutoUltimo",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.ParticionamentoLomutoUltimo",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuickSort",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.QuickSort",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuickSortPassoAPasso",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.QuickSortPassoAPasso",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch RadixSort",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.RadixSort",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch RadixSortDoisDigitos",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.RadixSortDoisDigitos",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch RadixSortDoisDigitos2",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.RadixSortDoisDigitos2",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch RadixSortTresDigitos",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.RadixSortTresDigitos",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch SelectionSortPassoPasso",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.SelectionSortPassoPasso",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch SelectionSortRecursivo",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.SelectionSortRecursivo",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch StoogeSort",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.StoogeSort",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch TopN",
+            "request": "launch",
+            "mainClass": "etapa_02_ordenacao.TopN",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayList",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.ArrayList",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch ElementAtPilha",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.ElementAtPilha",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fila",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.Fila",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch HashSet",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.HashSet",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch InverteFrase",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.InverteFrase",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch InvertePilha",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.InvertePilha",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch InvertePilhaIndex",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.InvertePilhaIndex",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxPilha",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.MaxPilha",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxPilhaIndex",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.MaxPilhaIndex",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch Parenteses",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.Parenteses",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pilha",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.Pilha",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch RemoveIndexLinkedList",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.RemoveIndexLinkedList",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch TrocaVizinhosLinkedList",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.TrocaVizinhosLinkedList",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch WordCloud",
+            "request": "launch",
+            "mainClass": "etapa_03_eds_lineares_e_tabelas_hash.WordCloud",
+            "projectName": "estrutura-de-dados_937371a5"
+        },
+        {
+            "type": "java",
+            "name": "Launch BST",
+            "request": "launch",
+            "mainClass": "etapa_04_arvores_binarias_de_pesquisa.BST",
+            "projectName": "estrutura-de-dados_937371a5"
+        }
+    ]
+}
