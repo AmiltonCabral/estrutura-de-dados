@@ -1,11 +1,16 @@
 package etapa_04_arvores_binarias_de_pesquisa;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.ArrayList;
+
 /**
  * BST
  */
 public class BST {
 
     private NodeBST root;
+    private int size;
 
 
     public boolean isEmpty() {
@@ -21,6 +26,7 @@ public class BST {
 
         if(isEmpty()) {
             this.root = toAdd;
+            this.size ++;
             return;
         }
 
@@ -32,6 +38,7 @@ public class BST {
                 if (aux.left == null) {
                     aux.left = toAdd;
                     toAdd.parent = aux;
+                    this.size ++;
                     return;
                 }
                 aux = aux.left;
@@ -40,6 +47,7 @@ public class BST {
                 if (aux.right == null) {
                     aux.right = toAdd;
                     toAdd.parent = aux;
+                    this.size ++;
                     return;
                 }
                 aux = aux.right;
@@ -55,6 +63,7 @@ public class BST {
         NodeBST toAdd = new NodeBST(element);
         if(isEmpty()) {
             this.root = toAdd;
+            this.size ++;
             return;
         }
         addRecursive(toAdd, this.root);
@@ -65,6 +74,7 @@ public class BST {
             if (aux.left == null) {
                 aux.left = toAdd;
                 toAdd.parent = aux;
+                this.size ++;
                 return;
             }
             addRecursive(toAdd, aux.left);
@@ -72,6 +82,7 @@ public class BST {
             if (aux.right == null) {
                 aux.right = toAdd;
                 toAdd.parent = aux;
+                this.size ++;
                 return;
             }
             addRecursive(toAdd, aux.right);
@@ -108,23 +119,111 @@ public class BST {
 
     public NodeBST min(NodeBST node) {
         NodeBST aux = node;
-        while (!aux.isLeaf()) {
-            //do something
+        while (aux.left != null) {
+            aux = aux.left;
         }
+        return aux;
+    }
 
+
+    public NodeBST max(NodeBST node) {
+        NodeBST aux = node;
+        while (aux.right != null) {
+            aux = aux.right;
+        }
+        return aux;
+    }
+
+
+    public NodeBST sucessor(NodeBST node) {
+        if (node.right != null) return min(node.right);
+
+        NodeBST aux = node;
+        while (aux.parent != null) {
+            if (aux.parent.value > node.value) return aux.parent;
+            aux = aux.parent;
+        }
         return null;
     }
 
-    //max() +recursiva +iterativa
 
-    //sucessor()
-
-    //predecessor()
+    public NodeBST predecessor(NodeBST node) {
+        if (node.left != null) return max(node.left);
+        
+        NodeBST aux = node;
+        while (aux.parent != null) {
+            if (aux.parent.value < node.value) return aux.parent;
+            aux = aux.parent;
+        }
+        return null;
+    }
+    
 
     //height() +recursiva
-
-    //remove() *3 casos
     
+    // 3 casos
+    public NodeBST remove(int valueToRemove) {
+        NodeBST toRemove = search(valueToRemove);
+        if (toRemove != null) {
+            remove(toRemove);
+            this.size --;
+        }
+        return toRemove;
+    }
+
+    private void remove(NodeBST toRemove) {
+        // Case 1: is Leaf
+        if (toRemove.isLeaf()) {
+            if (toRemove == this.root) {
+                this.root = null;
+            } else if (toRemove.value < toRemove.parent.value) {
+                toRemove.parent.left = null;
+            } else {
+                toRemove.parent.right = null;
+            }
+
+        // Case 2: as only one child
+        // - Case 2.1: left
+        } else if (toRemove.hasOnlyLeftChild()) {
+            if (toRemove == this.root) {
+                this.root = toRemove.left;
+                this.root.parent = null;
+            } else {
+                toRemove.left.parent = toRemove.parent;
+                if (toRemove.value < toRemove.parent.value) {
+                    toRemove.parent.left = toRemove.left;
+                } else {
+                    toRemove.parent.right = toRemove.left;
+                }
+            }
+        // - Case 2.2: right
+        } else if (toRemove.hasOnlyRightChild()) {
+            if (toRemove == this.root) {
+                this.root = toRemove.right;
+                this.root.parent = null;
+            } else {
+                toRemove.right.parent = toRemove.parent;
+                if (toRemove.value < toRemove.parent.value) {
+                    toRemove.parent.left = toRemove.right;
+                } else {
+                    toRemove.parent.right = toRemove.right;
+                }
+            }
+
+        // Case 3: as two childs
+        } else {
+            NodeBST sucessor = sucessor(toRemove);
+            toRemove.value = sucessor.value;
+            remove(sucessor);
+        }
+    }
+
+
+    public int size() {
+        return this.size;
+    }
+    
+
     //busca
       //busca em profundidade
         //preOrder() - maximo a esquerda dps direita
@@ -133,7 +232,27 @@ public class BST {
       //busca em largura
         //printBFS() - explora todos os filhos antes de seguir
 
-    
+
+    //change to printBFS(), delete, made by teatcher
+    public ArrayList<Integer> bfs() {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Deque<NodeBST> queue = new LinkedList<NodeBST>();
+        
+        if (!isEmpty()) {
+            queue.addLast(this.root);
+            while (!queue.isEmpty()) {
+                NodeBST current = queue.removeFirst();
+                
+                list.add(current.value);
+                
+                if(current.left != null) 
+                    queue.addLast(current.left);
+                if(current.right != null) 
+                    queue.addLast(current.right);   
+            }
+        }
+        return list;
+    }
 
 }
 
@@ -163,5 +282,10 @@ class NodeBST {
 
     public boolean hasOnlyRightChild() {
         return this.left == null && this.right != null;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(this.value);
     }
 }
