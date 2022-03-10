@@ -11,6 +11,7 @@ public class BST {
 
     private NodeBST root;
     private int size;
+    private String order;  //output to depth search
 
 
     public boolean isEmpty() {
@@ -159,8 +160,16 @@ public class BST {
     }
     
 
-    //height() +recursiva
+    public int height() {
+        return height(this.root);
+    }
+
+    private int height(NodeBST node) {
+        if (node == null) return -1;
+        else return 1 + Math.max(height(node.left), height(node.right));
+    }
     
+
     // 3 casos
     public NodeBST remove(int valueToRemove) {
         NodeBST toRemove = search(valueToRemove);
@@ -222,36 +231,108 @@ public class BST {
     public int size() {
         return this.size;
     }
-    
-
-    //busca
-      //busca em profundidade
-        //preOrder() - maximo a esquerda dps direita
-        //inOrder() - esquerda, nó, direita
-        //posOrder() - esquerda, direita, nó
-      //busca em largura
-        //printBFS() - explora todos os filhos antes de seguir
 
 
-    //change to printBFS(), delete, made by teatcher
+    //busca em profundidade
+    public String preOrder() {
+        this.order = "";
+        preOrder(this.root);
+        return this.order.trim();
+    }
+
+    private void preOrder(NodeBST node) {
+        if (node != null) {
+            this.order += node + " ";
+            preOrder(node.left);
+            preOrder(node.right);
+        }
+    }
+
+
+    //busca em profundidade
+    public String inOrder() {
+        this.order = "";
+        inOrder(this.root);
+        return this.order.trim();
+    }
+
+    private void inOrder(NodeBST node) {
+        if (node != null) {
+            inOrder(node.left);
+            this.order += node + " ";
+            inOrder(node.right);
+        }
+    }
+
+
+    //busca em profundidade
+    public String posOrder() {
+        this.order = "";
+        posOrder(this.root);
+        return this.order.trim();
+    }
+
+    private void posOrder(NodeBST node) {
+        if (node != null) {
+            posOrder(node.left);
+            posOrder(node.right);
+            this.order += node + " ";
+        }
+    }
+
+
+    //Not finished
     public ArrayList<Integer> bfs() {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        Deque<NodeBST> queue = new LinkedList<NodeBST>();
-        
+        Deque<NodeBST> queue = new LinkedList<>();
+
         if (!isEmpty()) {
             queue.addLast(this.root);
             while (!queue.isEmpty()) {
-                NodeBST current = queue.removeFirst();
+                //System.out.print(queue.getFirst() + " ");
+                NodeBST aux = queue.removeFirst();
                 
-                list.add(current.value);
+                list.add(aux.value);
                 
-                if(current.left != null) 
-                    queue.addLast(current.left);
-                if(current.right != null) 
-                    queue.addLast(current.right);   
+                if (aux.left != null)
+                    queue.addLast(aux.left);
+                if (aux.right != null)
+                    queue.addLast(aux.right);
             }
         }
         return list;
+    }
+
+
+    public static void main(String[] args) {
+        BST tst = new BST();
+        tst.add(52);
+        tst.add(22);
+        tst.add(85);
+        tst.add(8);
+        tst.add(43);
+        tst.add(81);
+        tst.add(96);
+        tst.add(11);
+        tst.add(26);
+        tst.add(69);
+        tst.add(74);
+        assert tst.preOrder().equals("52 22 8 11 43 26 85 81 69 74 96");
+        assert tst.inOrder().equals("8 11 22 26 43 52 69 74 81 85 96");
+        assert tst.posOrder().equals("11 8 26 43 22 74 69 81 96 85 52");
+        ArrayList<Integer> expectedBFS = new ArrayList<Integer>();
+        expectedBFS.add(52);
+        expectedBFS.add(22);
+        expectedBFS.add(85);
+        expectedBFS.add(8);
+        expectedBFS.add(43);
+        expectedBFS.add(81);
+        expectedBFS.add(96);
+        expectedBFS.add(11);
+        expectedBFS.add(26);
+        expectedBFS.add(69);
+        expectedBFS.add(74);
+        assert tst.bfs().equals(expectedBFS);
     }
 
 }
