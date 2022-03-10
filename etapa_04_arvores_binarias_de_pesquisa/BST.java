@@ -233,7 +233,7 @@ public class BST {
     }
 
 
-    //busca em profundidade
+    //depth search
     public String preOrder() {
         this.order = "";
         preOrder(this.root);
@@ -249,7 +249,7 @@ public class BST {
     }
 
 
-    //busca em profundidade
+    //depth search
     public String inOrder() {
         this.order = "";
         inOrder(this.root);
@@ -265,7 +265,7 @@ public class BST {
     }
 
 
-    //busca em profundidade
+    //depth search
     public String posOrder() {
         this.order = "";
         posOrder(this.root);
@@ -281,7 +281,7 @@ public class BST {
     }
 
 
-    //Not finished
+    //breadth search
     public ArrayList<Integer> bfs() {
         ArrayList<Integer> list = new ArrayList<Integer>();
         Deque<NodeBST> queue = new LinkedList<>();
