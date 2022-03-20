@@ -150,8 +150,7 @@ public class Heap {
     }
 
 
-    public static void main(String[] args) {
-
+    private static void test() {
         // test left
 		Heap heap = new Heap(15);
 		heap.add(100);
@@ -165,7 +164,6 @@ public class Heap {
 		assert heap.left(0) == 1;
 		assert heap.left(2) == 5;
 		assert heap.left(1) == 3;
-
         
         // test right
         heap = new Heap(15);
@@ -182,7 +180,6 @@ public class Heap {
 		assert heap.right(2) == 6;
 		assert heap.right(1) == 4;
 
-
         // test parent
         heap = new Heap(15);
 		heap.add(100);
@@ -196,7 +193,6 @@ public class Heap {
 		assert heap.parent(5) == 2;
 		assert heap.parent(3) == 1;
 		assert heap.parent(4) == 1;
-
 
         // test removed
         int[] expected = new int[]{82, 65, 62, 45, 56, 52, 43, 30, 33, 38,
@@ -246,5 +242,13 @@ public class Heap {
         assert 30 == heap.remove();
         expected = new int[]{30, 30, 33, 30, 33, 33, 43, 30, 33, 38, 0, 0, 0, 0, 0};
         assert Arrays.toString(expected).equals(heap.toString());
+    }
+
+
+    public static void main(String[] args) {
+        //test();
+        Heap hp = new Heap(new int[]{7, 32, 54, 78, 43, 65, 44, 12, 99, 19, 267, 34});
+        hp.add(95);
+        test();
     }
 }
