@@ -5,11 +5,6 @@ import java.util.Arrays;
 /**
  * Every node must be highter or equals to yours
  * childrens.
- * 
- * Dúvidas para aula:
- * - Necessidade do 'i > 0' no while do add()
- * 
- * 
  */
 public class Heap {
 
